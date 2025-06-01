@@ -159,7 +159,7 @@ class SchemaColorizer(object):
         else:
             v += 128
 
-        return '#%sFF' % (('%02X' % v) * 3)
+        return '#%sFF' % (('%02X' % round(v)) * 3)
 
     def region_name(self, s):
         return self.prefix + s[1:]
