@@ -1,6 +1,18 @@
 # 🎨 Color Highlight
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/Kronuz/25)
+> [!WARNING]
+> ### This package is unmaintained!
+>
+> This package has been unmaintained since 2018
+> and has been transferred to the SublimeText organization
+> for minimal maintenance.
+> However, besides small bug fixes,
+> there are no further plans for maintenance.
+>
+> As an alternative,
+> you may want to check out
+> the much more modern [Color Helper](https://github.com/facelessuser/ColorHelper) package.
+
 [![Package Control](https://img.shields.io/packagecontrol/dt/Color%20Highlight.svg)](https://packagecontrol.io/packages/Color%20Highlight)
 
 Show color codes (like "#ffffff", 0xffffff "rgb(255, 255, 255)", "white",
