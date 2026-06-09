@@ -69,7 +69,18 @@ class ColorScheme(object):
     def __init__(self, settings):
         path = settings.get('color_scheme') or DEFAULT_COLOR_SCHEME
         if not path.startswith('Packages/'):
-            path = 'Packages/Color Scheme - Default/' + path
+            filename = os.path.basename(path)
+            results = sublime.find_resources(filename)
+            # Prefer results outside Packages/User/ — subdirs there are
+            # usually plugin-generated copies (sftp, RainbowBrackets, etc.)
+            non_user = [r for r in results if not r.startswith('Packages/User/')]
+            if non_user:
+                path = non_user[0]
+            elif results:
+                path = results[0]
+            else:
+                path = 'Packages/Color Scheme - Default/' + filename
+            log.debug("color_scheme resolved: %r -> %r (all: %r)" % (filename, path, results))
         self.path = path[8:]
         self.time = datetime.datetime.now()
 
