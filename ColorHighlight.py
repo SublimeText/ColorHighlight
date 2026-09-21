@@ -17,7 +17,7 @@ from .settings import Settings, SettingTogglerCommandMixin
 from .colorizer import SchemaColorizer, all_names_to_hex, names_to_hex, xterm_to_hex, xterm8_to_hex, xterm8b_to_hex, xterm8f_to_hex
 
 NAME = "Color Highlight"
-VERSION = "1.2.3"
+VERSION = "1.2.4"
 
 
 # Color formats:
@@ -1116,7 +1116,7 @@ def queue_finalize(timeout=None):
     global __pre_initialized_
 
     for thread in threading.enumerate():
-        if thread.isAlive() and thread.name == queue_thread_name:
+        if thread.is_alive() and thread.name == queue_thread_name:
             __pre_initialized_ = True
             thread.__semaphore_.release()
             thread.join(timeout)
