@@ -1116,7 +1116,7 @@ def queue_finalize(timeout=None):
     global __pre_initialized_
 
     for thread in threading.enumerate():
-        if thread.isAlive() and thread.name == queue_thread_name:
+        if thread.is_alive() and thread.name == queue_thread_name:
             __pre_initialized_ = True
             thread.__semaphore_.release()
             thread.join(timeout)
